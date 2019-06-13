@@ -28,7 +28,30 @@ let getAllUsers = function(req) {
     })
 }
 
+let updateUser = function(req) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await userDto.findOneAndUpdate({
+                _id: req.query._id
+            }, req.update));
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+let deleteUser = function(data) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await userDto.findByIdAndRemove({ _id: data }))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addUser: addUser,
-    getAllUsers: getAllUsers
+    getAllUsers: getAllUsers,
+    updateUser: updateUser,
+    deleteUser: deleteUser
 }

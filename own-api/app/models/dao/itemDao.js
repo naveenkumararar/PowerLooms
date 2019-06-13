@@ -28,7 +28,20 @@ let getAllItems = function(req) {
         }
     })
 }
+let updateItem = function(data) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await itemDto.findOneAndUpdate({
+                _id: data.query._id
+            }, data.update))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addItem: addItem,
-    getAllItems: getAllItems
+    getAllItems: getAllItems,
+    updateItem: updateItem
+
 }

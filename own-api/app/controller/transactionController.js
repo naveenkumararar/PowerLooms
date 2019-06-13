@@ -8,6 +8,16 @@ let addTransaction = function(req, res) {
         res.send(error)
     }
 }
+
+let getAllTransactions = async function(req, res) {
+    try {
+        let result = await transactionDao.getAllTransactions(req.body);
+        res.send(result);
+    } catch (error) {
+        res.send(error)
+    }
+}
 module.exports = {
-    addTransaction: addTransaction
+    addTransaction: addTransaction,
+    getAllTransactions: getAllTransactions
 }

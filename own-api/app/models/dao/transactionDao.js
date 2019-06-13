@@ -16,6 +16,17 @@ let addTransaction = function(req) {
         }
     })
 }
+let getAllTransactions = function(req) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let result = await transactionDto.find();
+            resolve(result)
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
-    addTransaction: addTransaction
+    addTransaction: addTransaction,
+    getAllTransactions: getAllTransactions
 }

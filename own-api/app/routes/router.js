@@ -18,9 +18,14 @@ async function router(expressApp) {
 
     expressApp.post('/users', userController.addUser);
     expressApp.get('/users', userController.getAllUsers);
+    expressApp.put('/users/:id', userController.updateUser);
+    expressApp.delete('/users/:id', userController.deleteUser);
+
 
     expressApp.post('/items', itemController.addItem);
     expressApp.get('/items', itemController.getAllItems);
+    expressApp.put('/items/:id', itemController.updateItem);
+
 
     expressApp.post('/warps', warpController.addWarp);
     expressApp.get('/warps', warpController.getAllWarps);
@@ -29,6 +34,7 @@ async function router(expressApp) {
     expressApp.get('/category', categoryController.getAllCategorys);
 
     expressApp.post('/transactions', transactionsController.addTransaction);
+    expressApp.get('/transactions', transactionsController.getAllTransactions);
 
 
 }

@@ -16,7 +16,22 @@ let getAllItems = async function(req, res) {
         res.send(error)
     }
 }
+let updateItem = async function(req, res) {
+    try {
+        let updateData = {
+            query: {
+                _id: req.params.id
+            },
+            update: req.body
+        }
+        let result = await itemDao.updateItem(updateData)
+        res.send('Record added successfully')
+    } catch (error) {
+        res.send(error)
+    }
+}
 module.exports = {
     addItem: addItem,
-    getAllItems: getAllItems
+    getAllItems: getAllItems,
+    updateItem: updateItem
 }
