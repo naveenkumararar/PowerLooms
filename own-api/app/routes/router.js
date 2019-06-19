@@ -29,12 +29,15 @@ async function router(expressApp) {
 
     expressApp.post('/warps', warpController.addWarp);
     expressApp.get('/warps', warpController.getAllWarps);
+    expressApp.put('/warps/:id', warpController.updateWarp);
 
     expressApp.post('/category', categoryController.addCategory);
     expressApp.get('/category', categoryController.getAllCategorys);
+    expressApp.put('/category/:id', categoryController.updateCategory);
 
     expressApp.post('/transactions', transactionsController.addTransaction);
     expressApp.get('/transactions', transactionsController.getAllTransactions);
+    expressApp.put('/transactions/:id', transactionsController.updateTransaction);
 
 
 }

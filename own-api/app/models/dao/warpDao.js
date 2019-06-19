@@ -27,7 +27,19 @@ let getAllWarps = function(req) {
         }
     })
 }
+let updateWarp = function(param) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await warpDto.findOneAndUpdate({
+                _id: param.query._id
+            }, param.update))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addWarp: addWarp,
-    getAllWarps: getAllWarps
+    getAllWarps: getAllWarps,
+    updateWarp: updateWarp
 }

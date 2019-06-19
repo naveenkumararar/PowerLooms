@@ -27,7 +27,19 @@ let getAllCategorys = function(req) {
         }
     })
 }
+let updateCategory = function(req) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await categoryDto.findOneAndUpdate({
+                _id: req.query._id
+            }, req.update))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addCategory: addCategory,
-    getAllCategorys: getAllCategorys
+    getAllCategorys: getAllCategorys,
+    updateCategory: updateCategory
 }

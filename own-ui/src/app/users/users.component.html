@@ -6,6 +6,64 @@
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Users</h4>
                         <p class="card-category"> Here is a subtitle for this table</p>
+                        <div class="pull-right" style="margin-top:-28px;">
+                            <a href="#profile" data-toggle="tab">
+                                <!-- <i class="material-icons">playlist_add</i> -->
+                                <i class="material-icons" rel="tooltip" title="Create User" (click)="createUser();">add_circle</i>
+                                <div class="ripple-container"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Mobile
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+                                    <th>
+                                        Salary
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of userData">
+                                        <td>
+                                            {{data._id }}
+                                        </td>
+                                        <td>
+                                            {{data.name }}
+                                        </td>
+                                        <td>
+                                            {{data.mobile }}
+                                        </td>
+                                        <td>
+                                            {{data.place }}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{data.createdAt }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">New Users</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -53,140 +111,48 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td>
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td>
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td>
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td>
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td>
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td>
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="create" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" style="font-weight: bold">Create User</h4>
+            </div>
+            <div class="modal-body">
+                <form #userFormcreate="ngForm" (ngSubmit)="onUserFormSubmit(userFormcreate);">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Name</label>
+                                <input type="text" style="text-transform:uppercase" class="form-control" id="unam" required pattern="[a-zA-Z][a-zA-Z ]+" name="unam" #unam="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Mobile no</label>
+                                <input type="text" pattern="[0-9]*" minlength="10" maxlength="10" class="form-control" id="umobil" name="umobil" #umobil="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Email Id</label>
+                                <input type="text" class="form-control" id="uemai" name="uemai" #uemai="ngModel" ngModel required name="uemai" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #uemai="ngModel">
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn btn-primary" [disabled]="!userFormcreate.form.valid">Submit</button>
+                        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

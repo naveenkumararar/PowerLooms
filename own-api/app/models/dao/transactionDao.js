@@ -26,7 +26,19 @@ let getAllTransactions = function(req) {
         }
     })
 }
+let updateTransaction = async function(query) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await transactionDto.findOneAndUpdate({
+                _id: query.query._id
+            }, query.update))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addTransaction: addTransaction,
-    getAllTransactions: getAllTransactions
+    getAllTransactions: getAllTransactions,
+    updateTransaction: updateTransaction
 }

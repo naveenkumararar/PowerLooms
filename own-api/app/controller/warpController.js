@@ -16,7 +16,23 @@ let getAllWarps = async function(req, res) {
         res.send(error)
     }
 }
+
+let updateWarp = async function(req, res) {
+    try {
+        let queryString = {
+            query: {
+                _id: req.params.id
+            },
+            update: req.body
+        }
+        let result = await warpDao.updateWarp(queryString)
+        res.send('Record Updated Successfully');
+    } catch (error) {
+        res.send(error)
+    }
+}
 module.exports = {
     addWarp: addWarp,
-    getAllWarps: getAllWarps
+    getAllWarps: getAllWarps,
+    updateWarp: updateWarp
 }

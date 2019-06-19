@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -22,6 +23,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+// import { CategoryComponent } from './category/category.component';
 // import { UsersComponent } from './users/users.component';
 
 @NgModule({
@@ -35,11 +37,18 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
+    }),
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      preventDuplicates: true,
+      closeButton: true,
+
     })
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    // CategoryComponent,
     // UsersComponent,
 
   ],

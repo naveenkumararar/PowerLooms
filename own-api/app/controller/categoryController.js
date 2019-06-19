@@ -15,7 +15,22 @@ let getAllCategorys = async function(req, res) {
         res.send(error)
     }
 }
+let updateCategory = async function(req, res) {
+    try {
+        let queryString = {
+            query: {
+                _id: req.params.id
+            },
+            update: req.body
+        }
+        let result = await categoryDao.updateCategory(queryString)
+        res.send('Record Updated Successfully')
+    } catch (error) {
+        res.send(error)
+    }
+}
 module.exports = {
     addCategory: addCategory,
-    getAllCategorys: getAllCategorys
+    getAllCategorys: getAllCategorys,
+    updateCategory: updateCategory
 }
