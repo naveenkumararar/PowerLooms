@@ -23,6 +23,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 // import { CategoryComponent } from './category/category.component';
 // import { UsersComponent } from './users/users.component';
 
@@ -48,6 +49,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    TransactionsComponent,
     // CategoryComponent,
     // UsersComponent,
 

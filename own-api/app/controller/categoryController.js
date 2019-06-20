@@ -2,7 +2,10 @@ const categoryDao = require('../models/dao/categoryDao')
 let addCategory = function(req, res) {
     try {
         let result = categoryDao.addCategory(req.body);
-        res.send('successfully added')
+        res.send({
+            code: 200,
+            status: 'successfully added'
+        })
     } catch (err) {
         res.send(err)
     }
