@@ -13,6 +13,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { UsersComponent } from '../../users/users.component';
 import { CategoryComponent } from '../../category/category.component';
+import { TransactionsComponent } from '../../transactions/transactions.component';
 
 import {
   MatButtonModule,
@@ -45,7 +46,8 @@ import {
     NotificationsComponent,
     UpgradeComponent,
     UsersComponent,
-    CategoryComponent
+    CategoryComponent,
+    TransactionsComponent
   ]
 })
 

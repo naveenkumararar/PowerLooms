@@ -3,7 +3,9 @@ const transactionDao = require('../models/dao/transactionDao');
 let addTransaction = function(req, res) {
     try {
         let result = transactionDao.addTransaction(req.body)
-        res.send('successfully added')
+        res.send({
+            status: 'Transaction successfully added'
+        })
     } catch (error) {
         res.send(error)
     }

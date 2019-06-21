@@ -1,9 +1,11 @@
 const transactionDto = require('../dto/transactionDto')
 
 let addTransaction = function(req) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(async function(resolve, reject) {
         try {
-            let result = transactionDto.findOneAndUpdate({
+
+            console.log(req.id)
+            let result = await transactionDto.findOneAndUpdate({
                 id: req.id
             }, req, {
                 new: true,

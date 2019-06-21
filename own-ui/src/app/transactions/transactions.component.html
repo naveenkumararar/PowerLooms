@@ -1,3 +1,199 @@
-<p>
-  transactions works!
-</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Transactions</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <div class="pull-right" style="margin-top:-28px;">
+                            <a href="#profile" data-toggle="tab">
+                                <!-- <i class="material-icons">playlist_add</i> -->
+                                <i class="material-icons" rel="tooltip" title="Create Transaction" (click)="createTransaction();">add_circle</i>
+                                <div class="ripple-container"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Employee ID
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Warp
+                                    </th>
+                                    <th>
+                                        Sarees
+                                    </th>
+                                    <th>
+                                        Sarees Weight
+                                    </th>
+                                    <th>
+                                        Item
+                                    </th>
+                                    <th>
+                                        Cone#
+                                    </th>
+                                    <th>
+                                        Jari
+                                    </th>
+                                    <th>
+                                        Rate
+                                    </th>
+                                    <th>
+                                        Payment
+                                    </th>
+                                    <th>
+                                        Extra Payment
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of transactionData">
+                                        <td>{{data.emp}}
+
+                                        </td>
+                                        <td>{{data.date}}
+
+                                        </td>
+                                        <td>{{data.warp}}
+
+                                        </td>
+                                        <td>{{data.sarees}}
+
+                                        </td>
+                                        <td>{{data.sareeweight}}
+
+                                        </td>
+                                        <td>{{data.item}}
+
+                                        </td>
+                                        <td>{{data.cone}}
+
+                                        </td>
+                                        <td>{{data.jari}}
+
+                                        </td>
+                                        <td>{{data.rate}}
+
+                                        </td>
+                                        <td>{{data.payment}}
+
+                                        </td>
+                                        <td>{{data.extrapayment}}
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="create" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+                <h4 class="modal-title" style="font-weight: bold">Create Transaction</h4>
+            </div>
+            <div class="modal-body">
+                <form #userFormcreate="ngForm" (ngSubmit)="getFormData(userFormcreate);">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Employee</label>
+                                <input type="text" class="form-control" id="emp" required pattern="[a-zA-Z][a-zA-Z ]+" name="emp" #emp="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Date</label>
+                                <input type="text" class="form-control" id="date" name="date" #date="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Warp</label>
+                                <input type="text" class="form-control" id="warp" name="warp" #warp="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Sarees</label>
+                                <input type="text" class="form-control" id="sarees" name="sarees" #sarees="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Saree Weight</label>
+                                <input type="text" class="form-control" id="sareeweight" name="sareeweight" #sareeweight="ngModel" ngModel required name="sareeweight" #sareeweight="ngModel">
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Item</label>
+                                <input type="text" class="form-control" id="item" required name="item" #item="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Cone</label>
+                                <input type="text" class="form-control" id="cone" name="cone" #cone="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Jari</label>
+                                <input type="text" class="form-control" id="jari" name="jari" #jari="ngModel" ngModel required name="jari" #jari="ngModel">
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Rate</label>
+                                <input type="text" class="form-control" id="rate" required name="rate" #rate="ngModel" ngModel>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Payment</label>
+                                <input type="text" class="form-control" id="payment" name="payment" #payment="ngModel" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Extra Payment</label>
+                                <input type="text" class="form-control" id="extrapayment" name="extrapayment" #extrapayment="ngModel" ngModel required name="extrapayment" #extrapayment="ngModel">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn btn-primary" [disabled]="!userFormcreate.form.valid">Submit</button>
+                        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

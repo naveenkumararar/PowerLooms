@@ -1,12 +1,11 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-
 var transactionSchema = new Schema({
-    id: {
+    empId: {
         type: String
     },
-    EmpNo: {
+    id: {
         type: String
     },
     noOfSaree: {
@@ -26,7 +25,22 @@ var transactionSchema = new Schema({
     },
     payment: {
         type: Number
-    }
+    },
+
+    // 
+    date: {
+        type: String
+    },
+
+    extraPayment: {
+        type: Number
+    },
+    warp: {
+        type: String
+    },
+    cone: {
+        type: Number
+    },
 }, {
     timestamps: true
 })
