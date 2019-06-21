@@ -5,6 +5,12 @@ let userSchema = new Schema({
     _id: {
         type: String
     },
+    id: {
+        type: String
+    },
+    category: {
+        type: String
+    },
     name: {
         type: String
     },

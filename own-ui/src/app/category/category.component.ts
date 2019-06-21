@@ -38,7 +38,7 @@ export class CategoryComponent implements OnInit {
   getFormData(form) {
     console.log(form.value)
     let formData = {
-      id: 'user_' + Date.parse(Date()),
+      id: 'category_' + Date.parse(Date()),
       name: form.value.name,
       description: form.value.description
     }

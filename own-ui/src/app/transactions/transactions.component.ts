@@ -43,7 +43,7 @@ export class TransactionsComponent implements OnInit {
     let formData={
       id:'transaction'+Date.parse(Date()),
       empId:form.value.emp,
-      // noOfSaree:form.value.sarees,
+      noOfSaree:form.value.sarees,
       sareeWeight:form.value.sareeweight,
       rate:form.value.rate,
       item:form.value.item,
@@ -54,7 +54,7 @@ export class TransactionsComponent implements OnInit {
       warp:form.value.warp,
       cone:form.value.cone
     }
-
+console.log(formData)
     this._TransactionService.addTranstaction(formData).then((data)=>{
       if(data['status']){
         this.toastr.info(data['status']);

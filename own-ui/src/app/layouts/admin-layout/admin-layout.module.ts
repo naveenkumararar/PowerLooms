@@ -14,6 +14,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { UsersComponent } from '../../users/users.component';
 import { CategoryComponent } from '../../category/category.component';
 import { TransactionsComponent } from '../../transactions/transactions.component';
+import { ReversePipe } from '../../pipes/reverse/reverse.pipe';
+
 
 import {
   MatButtonModule,
@@ -47,7 +49,8 @@ import {
     UpgradeComponent,
     UsersComponent,
     CategoryComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    ReversePipe
   ]
 })
 

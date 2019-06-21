@@ -22,16 +22,19 @@
                                         ID
                                     </th>
                                     <th>
+                                        Category
+                                    </th>
+                                    <th>
                                         Name
                                     </th>
                                     <th>
                                         Mobile
                                     </th>
                                     <th>
-                                        City
+                                        Place
                                     </th>
                                     <th>
-                                        Salary
+                                        Created At
                                     </th>
                                 </thead>
                                 <tbody>
@@ -40,13 +43,16 @@
                                             {{data._id }}
                                         </td>
                                         <td>
+                                            {{data.category }}
+                                        </td>
+                                        <td>
                                             {{data.name }}
                                         </td>
                                         <td>
                                             {{data.mobile }}
                                         </td>
                                         <td>
-                                            {{data.place }}
+                                            {{data.place |reverse}}
                                         </td>
                                         <td class="text-primary">
                                             {{data.createdAt }}
@@ -76,6 +82,18 @@
             <div class="modal-body">
                 <form #userFormcreate="ngForm" (ngSubmit)="onUserFormSubmit(userFormcreate);">
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="inputName" class="label-control">Category</label>
+                                <!-- <input type="text" style="text-transform:uppercase" class="form-control" id="unam" required pattern="[a-zA-Z][a-zA-Z ]+" name="unam" #unam="ngModel" ngModel> -->
+                                <select ngModel class="custom-select form-control mb-2 mb-sm-0" id="inlineFormCustomSelect" name="category" required #p>
+                                                <!-- <option value='All Zones'>All Zones</option> -->
+                                                <option *ngFor="let s of categoryData" [value]='s.id'>{{s.name}}
+                                                </option>
+                                              </select>
+
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="inputName" class="label-control">Name</label>
