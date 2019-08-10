@@ -38,8 +38,19 @@ let updateWarp = function(param) {
         }
     })
 }
+
+let deleteWarp = function(data) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            resolve(await warpDto.deleteOne({ _id: data }))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addWarp: addWarp,
     getAllWarps: getAllWarps,
-    updateWarp: updateWarp
+    updateWarp: updateWarp,
+    deleteWarp: deleteWarp
 }

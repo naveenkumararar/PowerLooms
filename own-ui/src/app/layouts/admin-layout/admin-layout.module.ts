@@ -15,6 +15,8 @@ import { UsersComponent } from '../../users/users.component';
 import { CategoryComponent } from '../../category/category.component';
 import { TransactionsComponent } from '../../transactions/transactions.component';
 import { ReversePipe } from '../../pipes/reverse/reverse.pipe';
+import { WebPageComponent } from '../../web-page/web-page.component';
+import { SareeDetailsComponent } from '../../saree-details/saree-details.component';
 
 
 import {
@@ -50,6 +52,8 @@ import {
     UsersComponent,
     CategoryComponent,
     TransactionsComponent,
+    WebPageComponent,
+    SareeDetailsComponent,
     ReversePipe
   ]
 })

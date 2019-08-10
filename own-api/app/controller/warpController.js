@@ -31,8 +31,24 @@ let updateWarp = async function(req, res) {
         res.send(error)
     }
 }
+
+let deleteWarp = function(req, res) {
+    try {
+        let result = warpDao.deleteWarp(req.params.id)
+        res.status(200).json({
+            status: 'Success',
+            result: result
+        })
+    } catch (err) {
+        res.status(400).json({
+            status: 'Failure',
+            err: err
+        })
+    }
+}
 module.exports = {
     addWarp: addWarp,
     getAllWarps: getAllWarps,
-    updateWarp: updateWarp
+    updateWarp: updateWarp,
+    deleteWarp: deleteWarp
 }

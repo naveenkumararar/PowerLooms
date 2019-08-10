@@ -1,0 +1,15 @@
+#bolder {
+    font-weight: bolder !important;
+    color: black;
+    font-size: 13px;
+}
+
+#image {
+    display: flex;
+    align-content: space-around;
+    // align-content: center; // display: flex
+}
+
+.add-to-cart {
+    float: right;
+}

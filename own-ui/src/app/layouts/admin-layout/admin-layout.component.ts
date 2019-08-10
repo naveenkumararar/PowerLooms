@@ -18,8 +18,9 @@ export class AdminLayoutComponent implements OnInit {
   private yScrollStack: number[] = [];
 
   constructor( public location: Location, private router: Router) {}
-
+viewSidebar=1;
   ngOnInit() {
+      this.viewSidebar=1;
       const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {

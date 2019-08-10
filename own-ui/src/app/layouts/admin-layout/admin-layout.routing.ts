@@ -11,6 +11,8 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { UsersComponent } from '../../users/users.component';
 import { CategoryComponent } from '../../category/category.component';
 import { TransactionsComponent } from '../../transactions/transactions.component';
+import { WebPageComponent } from '../../web-page/web-page.component';
+import { SareeDetailsComponent } from '../../saree-details/saree-details.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -65,6 +67,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade', component: UpgradeComponent },
     { path: 'users', component: UsersComponent },
     { path: 'category', component: CategoryComponent },
-    { path: 'transactions', component: TransactionsComponent }
+    { path: 'transactions', component: TransactionsComponent },
+    { path: 'web-page', component: WebPageComponent },
+    // SareeDetailsComponent
+    { path: 'saree-details', component: SareeDetailsComponent }
+    
     ,
 ];

@@ -30,8 +30,18 @@ let updateItem = async function(req, res) {
         res.send(error)
     }
 }
+
+let deleteItem = function(req, res) {
+    try {
+        let result = itemDao.deleteItem(req.params.id);
+        res.send('Record Deleted Successfully')
+    } catch (error) {
+        res.send(error)
+    }
+}
 module.exports = {
     addItem: addItem,
     getAllItems: getAllItems,
-    updateItem: updateItem
+    updateItem: updateItem,
+    deleteItem: deleteItem
 }

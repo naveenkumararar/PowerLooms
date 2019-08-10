@@ -39,9 +39,24 @@ let updateItem = function(data) {
         }
     })
 }
+
+let deleteItem = function(data) {
+    return new Promise(async(resolve, reject) => {
+        try {
+            console.log('data', data)
+            let result = await itemDto.findByIdAndRemove({
+                _id: data
+            })
+            resolve(result)
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 module.exports = {
     addItem: addItem,
     getAllItems: getAllItems,
-    updateItem: updateItem
+    updateItem: updateItem,
+    deleteItem: deleteItem
 
 }
