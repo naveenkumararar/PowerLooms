@@ -8,6 +8,45 @@
 // }
 .flex {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.carousel-control.right {
+    background-image: none;
+    right: -66px;
+}
+
+.carousel-control.left {
+    background-image: none;
+    left: -85px;
+}
+
+.bolder {
+    font-weight: bold;
+    color: black;
+}
+
+.center {
+    align-items: center;
+    float: right;
+}
+
+// button {
+//     align-items: center;
+// }
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item>img {
+    height: 100%;
+    width: 50%;
 }

@@ -23,6 +23,8 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+// import { LandingPageComponent } from './landing-page/landing-page.component';
+// import { PaymentComponent } from './payment/payment.component';
 // import { SareeDetailsComponent } from './saree-details/saree-details.component';
 // import { WebPageComponent } from './web-page/web-page.component';
 // import { ReversePipe } from './reverse.pipe';
@@ -51,6 +53,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    // LandingPageComponent,
+    // PaymentComponent,
     // SareeDetailsComponent,
     // WebPageComponent,
     // ReversePipe,

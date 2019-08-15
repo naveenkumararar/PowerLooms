@@ -13,6 +13,8 @@ import { CategoryComponent } from '../../category/category.component';
 import { TransactionsComponent } from '../../transactions/transactions.component';
 import { WebPageComponent } from '../../web-page/web-page.component';
 import { SareeDetailsComponent } from '../../saree-details/saree-details.component';
+import { PaymentComponent } from '../../payment/payment.component';
+import { LandingPageComponent } from '../../landing-page/landing-page.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -70,6 +72,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'transactions', component: TransactionsComponent },
     { path: 'web-page', component: WebPageComponent },
     // SareeDetailsComponent
+    //PaymentComponent
+    { path: 'payment', component: PaymentComponent },
+    
+    //LandingPageComponent
+    { path: 'landing-page', component: LandingPageComponent },
+    
     { path: 'saree-details', component: SareeDetailsComponent }
     
     ,

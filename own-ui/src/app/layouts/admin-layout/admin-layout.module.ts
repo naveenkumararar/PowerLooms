@@ -17,6 +17,8 @@ import { TransactionsComponent } from '../../transactions/transactions.component
 import { ReversePipe } from '../../pipes/reverse/reverse.pipe';
 import { WebPageComponent } from '../../web-page/web-page.component';
 import { SareeDetailsComponent } from '../../saree-details/saree-details.component';
+import { PaymentComponent } from '../../payment/payment.component';
+import { LandingPageComponent } from '../../landing-page/landing-page.component';
 
 
 import {
@@ -54,7 +56,9 @@ import {
     TransactionsComponent,
     WebPageComponent,
     SareeDetailsComponent,
-    ReversePipe
+    ReversePipe,
+    PaymentComponent,
+    LandingPageComponent
   ]
 })
 

@@ -17,7 +17,7 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
     { path: '/users', title: 'Users',  icon:'notifications', class: '' },
     { path: '/web-page', title: 'Live',  icon:'notifications', class: '' },
-    { path: '/saree-details', title: 'Saree-Details',  icon:'notifications', class: '' },
+    // { path: '/saree-details', title: 'Saree-Details',  icon:'notifications', class: '' },
 
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     { path: '/category', title: 'Category',  icon:'unarchive', class: '' },
